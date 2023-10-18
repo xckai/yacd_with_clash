@@ -121,7 +121,7 @@ export function BackendForm() {
 
 async function verify(apiConfig: ClashAPIConfig): Promise<[number, string?]> {
   try {
-    new URL(apiConfig.baseURL);
+    new URL(apiConfig.baseURL,document.baseURI);
   } catch (e) {
     if (apiConfig.baseURL) {
       const prefix = apiConfig.baseURL.substring(0, 7);
@@ -129,7 +129,6 @@ async function verify(apiConfig: ClashAPIConfig): Promise<[number, string?]> {
         return [1, 'Must starts with http:// or https://'];
       }
     }
-
     return [1, 'Invalid URL'];
   }
   try {

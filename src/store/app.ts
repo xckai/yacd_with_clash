@@ -158,7 +158,7 @@ export function initialState(): StateApp {
   }
   const conf = s.clashAPIConfigs[s.selectedClashAPIConfigIndex];
   if (conf) {
-    const url = new URL(conf.baseURL);
+    const url = new URL(conf.baseURL,document.baseURI);
     if (query.hostname) {
       if (query.hostname.indexOf('http') === 0) {
         url.href = decodeURIComponent(query.hostname);
