@@ -1,5 +1,5 @@
 ARG COMMIT_SHA=""
-FROM  dreamacro/clash as clash
+FROM  dreamacro/clash-premium as clash
 
 FROM  node:alpine AS builder
 WORKDIR /app
@@ -19,6 +19,7 @@ FROM node:alpine as runner
 RUN apk add \
   nginx \
   nginx-mod-http-brotli \
+  bash \
   --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community
 COPY docker/nginx-default.conf /etc/nginx/http.d/default.conf
 RUN rm -rf /usr/share/nginx/html/*
