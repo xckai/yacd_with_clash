@@ -15,6 +15,7 @@ app.use(
     target: CLASH_EXTERNAL_CONTROLLER,
     changeOrigin: true,
     ws: true,
+    logLevel: 'silent',
     pathRewrite: function (path, req) {
       return path.replace('/internal-clash', '');
     },

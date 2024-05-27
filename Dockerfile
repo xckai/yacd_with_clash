@@ -1,5 +1,5 @@
 ARG COMMIT_SHA=""
-FROM  dreamacro/clash-premium as clash
+FROM  dreamacro/clash-premium:2023.08.17 as clash
 
 FROM  node:alpine AS builder
 WORKDIR /app
