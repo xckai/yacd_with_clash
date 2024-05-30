@@ -31,5 +31,6 @@ COPY --from=clash /clash /clash
 COPY ./server /server
 
 ENV YACD_DEFAULT_BACKEND "/internal-clash"
+ENV INTERVAL_UPDATE_MINUTE "1440"
 ADD docker-entrypoint.sh /
 CMD ["/docker-entrypoint.sh"]
